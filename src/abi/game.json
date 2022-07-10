@@ -1,0 +1,95 @@
+[
+  {
+    "members": [
+      {
+        "name": "row",
+        "offset": 0,
+        "type": "felt"
+      },
+      {
+        "name": "col",
+        "offset": 1,
+        "type": "felt"
+      }
+    ],
+    "name": "Cell",
+    "size": 2,
+    "type": "struct"
+  },
+  {
+    "inputs": [],
+    "name": "constructor",
+    "outputs": [],
+    "type": "constructor"
+  },
+  {
+    "inputs": [
+      {
+        "name": "idx",
+        "type": "felt"
+      }
+    ],
+    "name": "get_character_cell",
+    "outputs": [
+      {
+        "name": "current_cell",
+        "type": "Cell"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "name": "user",
+        "type": "felt"
+      }
+    ],
+    "name": "get_route_time",
+    "outputs": [
+      {
+        "name": "timestamp",
+        "type": "felt"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "launch_game",
+    "outputs": [],
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "end_game",
+    "outputs": [],
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "move_right",
+    "outputs": [],
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "move_down",
+    "outputs": [],
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "move_left",
+    "outputs": [],
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "move_up",
+    "outputs": [],
+    "type": "function"
+  }
+]

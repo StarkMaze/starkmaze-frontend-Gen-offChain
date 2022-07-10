@@ -1,0 +1,614 @@
+:root {
+  --gameObjectSize: 3.2vmin;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes shake-up {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, -4px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-down {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 4px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-left {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-4px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-right {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(4px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-up-hard {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, -14px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-down-hard {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(0px, 14px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-left-hard {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(-14px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes shake-right-hard {
+  0% {
+    transform: translate(0px, 0px);
+  }
+
+  50% {
+    transform: translate(14px, 0px);
+  }
+
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+
+/* link css */
+a:link {
+  color: #00d9ff;
+}
+
+a:visited {
+  color: #00d9ff;
+}
+
+a:hover {
+  color: #00d9ff;
+}
+
+a:active {
+  color: #00d9ff;
+}
+
+/* Up Div Stuff*/
+
+#left,
+#middle,
+#right {
+  display: inline-block;
+}
+
+.top-btn {
+  font-family: 'JetBrains Mono', monospace;
+  color: #ffffff;
+  font-size: calc(8px + 2vmin);
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+}
+
+.top-btn:hover {
+  background: #00000038;
+  border: none;
+}
+
+.top-btn:active {
+  background-color: #00000086;
+}
+
+/* Stopwatch */
+.stopwatch {
+  font-size: calc(30px + 2vmin);
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Down Div Stuff*/
+
+#down {
+  display: inline-block;
+}
+
+.down-btn {
+  font-family: 'JetBrains Mono', monospace;
+  color: #ffffff;
+  font-size: calc(13px + 2vmin);
+  background: none;
+  border: none;
+  padding: 4px;
+  display: flex;
+  border-radius: 30px;
+  margin: 4px;
+}
+
+.control-btn {
+  color: #ffffff;
+  font-size: calc(19px + 2vmin);
+  background: none;
+  border: none;
+  border-radius: 30px;
+  height: calc(19px + 2vmin);
+  width: calc(19px + 2vmin);
+  padding: 0px;
+}
+
+div#space {
+  padding-left: 21px;
+}
+
+button#up-btn:active,
+button#down-btn:active,
+button#left-btn:active,
+button#right-btn:active {
+  background-color: #00000086;
+}
+
+.down-btn:hover {
+  background: #00000038;
+  border: none;
+}
+
+.down-btn:active {
+  background-color: #00000086;
+}
+
+.down-div {
+  display: inherit;
+  padding-top: 5px;
+}
+
+div#tools {
+  padding-left: 13px;
+}
+
+/* tysm https://stackoverflow.com/a/53375498/16216937 */
+
+#controller {
+  display: grid;
+  grid-template-areas: "l space r";
+}
+
+#controller>div[grid^="space"] {
+  grid-area: space;
+}
+
+#controller>div[grid^="tool"] {
+  grid-area: r;
+}
+
+#controller>div[grid^="dpad"] {
+  grid-area: l;
+}
+
+#controller>.dpad {
+  display: grid;
+  grid-template-areas: ".     header     ."
+    "main      .     right"
+    ".     footer     .";
+}
+
+#controller>.dpad>button[game-btn^="KEY_UP"] {
+  grid-area: header;
+}
+
+#controller>.dpad>button[game-btn^="KEY_LEFT"] {
+  grid-area: main;
+}
+
+#controller>.dpad>button[game-btn^="KEY_RIGHT"] {
+  grid-area: right;
+}
+
+#controller>.dpad>button[game-btn^="KEY_DOWN"] {
+  grid-area: footer;
+}
+
+/* Game */
+#maze-canvas {
+  line-height: 0px;
+}
+
+.overlay-p {
+  margin: 0px 0px 11px 0px;
+}
+
+.space,
+.missing,
+.wall,
+.start,
+.finish,
+.path,
+.rainbow {
+  height: var(--gameObjectSize);
+  width: var(--gameObjectSize);
+  float: left;
+}
+
+.space {
+  background-color: #ffffff;
+}
+
+.wall {
+  background-color: #000000;
+}
+
+.start {
+  background-color: #ff0000;
+}
+
+.finish {
+  background-color: #4cff00;
+}
+
+.path {
+  background-color: #808080;
+}
+
+.missing {
+  background-color: #00d9ff;
+}
+
+.rainbow {
+  background: linear-gradient(to top, #2f00ff, #2f00ff);
+  /* animation: animate 5s linear infinite; */
+}
+
+@keyframes animate {
+
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+div#maze {
+  position: relative;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
+  box-shadow: 0px 0px 17px 1px #1d1f26;
+}
+
+.maze-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000000a1;
+  box-sizing: border-box;
+  padding: 10%;
+  z-index: 1;
+  transition: 0.3s ease;
+  text-align: left;
+  backdrop-filter: blur(5px);
+  font-size: 3.6vmin;
+}
+
+div#ran-out-of-time {
+  display: none
+}
+
+div#finished {
+  display: none
+}
+
+/* Config */
+.config-div {
+  display: none;
+}
+
+.config-box {
+  width: 41vmin;
+  color: #ffffff;
+  box-shadow: 0px 0px 17px 1px #1d1f26;
+  background: #16181c;
+  padding: 18px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+}
+
+input[type="number" i] {
+  font-family: 'JetBrains Mono', monospace;
+  width: 58px;
+  text-align: center;
+  border: 2px solid #ffffff;
+  margin-bottom: 4px;
+  background-color: #323740;
+  color: #ffffff;
+  border-radius: 3px 0px 0px 3px;
+}
+
+button.conf-btn {
+  font-family: 'JetBrains Mono', monospace;
+  color: #ffffff;
+  background: #323740;
+  border-color: #ffffff;
+  border-style: solid;
+}
+
+button.conf-btn:hover {
+  background: #21242b;
+}
+
+button.conf-btn:active {
+  background: #1b1d22;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #eee;
+  border-radius: 3px;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Start Stuff */
+.start-div {
+  display: none;
+}
+
+.start-box {
+  color: #ffffff;
+  box-shadow: 0px 0px 17px 1px #1d1f26;
+  background: #16181c;
+  padding: 18px;
+  border-radius: 5px;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
+  width: 60.2vmin;
+}
+
+#x {
+  position: absolute;
+  background: #363b46;
+  color: white;
+  top: -10px;
+  right: -10px;
+  border-radius: 44px;
+  font-size: 30px;
+  font-family: inherit;
+  border-style: solid;
+  border-color: #1d2026;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+img#github-repo {
+  border-radius: 5px;
+}
+
+p#title {
+  font-weight: bold;
+  font-size: 35px;
+  margin: 0px 0px 5px 0px;
+}
+
+img {
+  border-radius: 13px;
+  padding: 3px;
+}
+
+/* Remove Focus */
+textarea:focus,
+input:focus,
+button:focus {
+  outline: none;
+}
