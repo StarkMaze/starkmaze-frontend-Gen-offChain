@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleArrowDown, faCircleArrowLeft, faCircleArrowRight, faCircleArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { movePlayer } from "./Tool";
 import { getCookie } from "./Cookies";
+import { StarknetProvider, getInstalledInjectedConnectors } from "@starknet-react/core";
+import { Account, ButtonConnect, ButtonControl, TransactionManager } from "./Connect";
+
 
 class Down extends React.Component {
     constructor(props) {
@@ -39,7 +42,8 @@ class Down extends React.Component {
     }
 
     render() {
-        return <div className="down-div" id="down-div">
+        return <StarknetProvider>
+        <div className="down-div" id="down-div">
             <div id="controller">
                 <div className="dpad" grid="dpad">
                     <button onClick={this.up} game-btn="KEY_UP" aria-label="up" id="up-btn" className="control-btn" type="button"><FontAwesomeIcon icon={faCircleArrowUp} /></button><br />
@@ -56,7 +60,9 @@ class Down extends React.Component {
                     <button onClick={this.phaze} game-btn="KEY_PHAZE" id="phaze-btn" className="down-btn" type="button"><FontAwesomeIcon icon={faPersonRunning} />Phaz<u>e</u>({defaultNumberOfPhazes})</button>
                 </div> */}
             </div>
-        </div>;
+            <TransactionManager />
+        </div>
+        </StarknetProvider>;
     }
 }
 

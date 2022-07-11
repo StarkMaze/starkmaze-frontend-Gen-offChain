@@ -37,15 +37,15 @@ class Up extends React.Component {
     render() {
         return <StarknetProvider connectors={connectors}>
                 <div className="up-div"></div>
-                <ButtonConnect />
-                <Account />
             
             {/* <div id="left">
                 <button onClick={mazeRedo} id="redo-reset-btn" className="top-btn" type="button"><FontAwesomeIcon icon={faRefresh} /><u>R</u>edo</button>
             </div> */}
-            {/* <div id="middle">
-                <Stopwatch />
-            </div> */}
+            <div id="middle">
+                {/* <Stopwatch /> */}
+                <ButtonConnect />
+                <Account />
+            </div>
             {/* <div id="right">
                 <button onClick={this.openConfig} id="config-btn" className="top-btn" type="button"><FontAwesomeIcon icon={faGear} /><u>C</u>onfig</button>
             </div> */}

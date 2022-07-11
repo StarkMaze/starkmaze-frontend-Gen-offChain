@@ -9,7 +9,12 @@ export function useStarkNet() {
 
 export function Account() {
   const { account } = useStarknet();
-  return <div>Gm: {account || "Your are not connected!"}</div>;
+  console.log(account);
+  if (account === undefined){
+    return <div>GM: {"Your are not connected!"}</div>;
+  } else {
+    return <div>GM: {account}</div>;
+  }
 }
 
 export function ButtonConnect() {
