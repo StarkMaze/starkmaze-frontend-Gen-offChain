@@ -57,9 +57,6 @@ class Maze extends React.Component {
         return (
             <div id="maze">
                 <div id="ran-out-of-time" className="maze-overlay">
-                    <p id="edit-results-time" className="overlay-p">You didn't finish the maze in time! </p>
-
-                    <p className="overlay-p">Press R or the Redo Button to retry the maze.</p>
                 </div>
 
                 <div id="finished" className="maze-overlay">

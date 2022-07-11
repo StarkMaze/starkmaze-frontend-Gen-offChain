@@ -1,6 +1,4 @@
 import { toggleConfig } from "./Config"
-import { togglePhaze } from "./Phaze"
-import { toggleQuake } from "./Quake"
 import { finished, movePlayer, redoMaze, resetMaze } from "./Tool"
 
 export var controlls = true
@@ -24,15 +22,9 @@ export function createControls() {
         } else if (event.key === "s" || event.key === "ArrowDown") {
             movePlayer("down")
             document.getElementById("down-btn").style.filter = "brightness(65%)"
-        } else if (event.key === "c") {
+        } else if (event.key === "m") {
             toggleConfig()
             document.getElementById("config-btn").style.filter = "brightness(65%)"
-        } else if (event.key === "e") {
-            togglePhaze()
-            document.getElementById("phaze-btn").style.filter = "brightness(65%)"
-        } else if (event.key === "q") {
-            toggleQuake()
-            document.getElementById("quake-btn").style.filter = "brightness(65%)"
         } else if (event.key === "r") {
             document.getElementById("redo-reset-btn").style.filter = "brightness(65%)"
             if (finished) {
@@ -56,12 +48,8 @@ export function createControls() {
             document.getElementById("up-btn").style.filter = "brightness(100%)"
         } else if (event.key === "s" || event.key === "ArrowDown") {
             document.getElementById("down-btn").style.filter = "brightness(100%)"
-        } else if (event.key === "c") {
+        } else if (event.key === "m") {
             document.getElementById("config-btn").style.filter = "brightness(100%)"
-        } else if (event.key === "e") {
-            document.getElementById("phaze-btn").style.filter = "brightness(100%)"
-        } else if (event.key === "q") {
-            document.getElementById("quake-btn").style.filter = "brightness(100%)"
         } else if (event.key === "r") {
             document.getElementById("redo-reset-btn").style.filter = "brightness(100%)"
         }

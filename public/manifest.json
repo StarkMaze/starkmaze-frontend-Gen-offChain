@@ -1,6 +1,6 @@
 {
-  "short_name": "Phaze",
-  "name": "Phaze, a maze with extra things to do. (and its timed)",
+  "short_name": "StarkMaze",
+  "name": "StarkMaze, a mini recuring maze game build on StarkNet ",
   "icons": [
     {
       "src": "favicon.ico",

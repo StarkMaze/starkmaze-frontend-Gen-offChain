@@ -4,8 +4,6 @@ import { shake } from './Animate';
 import { gameTime } from './Config';
 import { canControl, controlls } from './Control';
 import { clearOverlays, updateCanvas } from './Maze';
-import { defaultNumberOfPhazes, numberOfPhazes, phazePlayer, phazeToggled, resetPhaze, togglePhaze } from './Phaze';
-import { defaultNumberOfQuakes, numberOfQuakes, quakedWalls, quakePlayer, quakeToggled, resetQuake, toggleQuake } from './Quake';
 import { currentTime, resetTimer, startTimer, stopTimer } from './Stopwatch';
 
 export var finished = false;
@@ -119,14 +117,6 @@ export function resetMaze() {
     stopTimer()
     resetTimer()
 
-    resetPhaze()
-    resetQuake()
-    //toggle all tools off
-    if (phazeToggled)
-        togglePhaze()
-    if (quakeToggled)
-        toggleQuake()
-
     canControl(true)
 
     boolRunOnce = true
@@ -144,24 +134,9 @@ export function redoMaze() {
     replace(gameMaze, "rainbow", "space")
     gameMaze[gameMaze.length - 2][1] = "start"
 
-    //replace walls broken by quake
-    for (let index = 0; index < quakedWalls.length; ++index) {
-        var y = quakedWalls[index][0]
-        var x = quakedWalls[index][1]
-        gameMaze[y][x] = "wall"
-    }
-
     //stop and reset timer
     stopTimer()
     resetTimer()
-
-    resetPhaze()
-    resetQuake()
-    //toggle all tools off
-    if (phazeToggled)
-        togglePhaze()
-    if (quakeToggled)
-        toggleQuake()
 
     canControl(true)
     boolRunOnce = true
@@ -170,12 +145,10 @@ export function redoMaze() {
 
 export function finishedMaze() {
     //stop timer
-    stopTimer()
+    //stopTimer()
 
     document.getElementById("finished").style.display = "inherit"
     document.getElementById("edit-results-finished").innerHTML += `<br/>${currentTime}/${gameTime}ms Left` +
-        `<br/>${numberOfPhazes}/${defaultNumberOfPhazes} Phazes Left` +
-        `<br/>${numberOfQuakes}/${defaultNumberOfQuakes} Quakes Left` +
         `<br/>${numbersOfRedos} Redos`
 
     finished = true
@@ -191,11 +164,6 @@ export function finishedMaze() {
     var redobtn = document.querySelector('#redo-reset-btn');
     redobtn.innerHTML = redobtn.innerHTML.substring(0, redobtn.innerHTML.length - 3) + "eset";
 
-    //toggle all tools off
-    if (phazeToggled)
-        togglePhaze()
-    if (quakeToggled)
-        toggleQuake()
 
     canControl(false)
     updateCanvas()
@@ -214,12 +182,7 @@ export function movePlayer(direction) {
     //get player pos
     var playerPos = getPlayerPosition(gameMaze)
 
-    //check if quake or phaze is toggled
-    if (quakeToggled) {
-        quakePlayer(direction)
-    } else if (phazeToggled) {
-        phazePlayer(direction)
-    } else {
+
         //get items nearby
         var itemUp = gameMaze[playerPos[0] - 1][playerPos[1]]
         var itemDown = gameMaze[playerPos[0] + 1][playerPos[1]]
@@ -274,7 +237,6 @@ export function movePlayer(direction) {
             default:
                 console.error("NO VALID DIRECTION PROVIDED!!! " + direction)
         }
-    }
 
     //if player moved(compare cords), start the timer
     var playerPosNew = getPlayerPosition()

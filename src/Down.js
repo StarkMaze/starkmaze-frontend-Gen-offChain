@@ -1,9 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleArrowDown, faCircleArrowLeft, faCircleArrowRight, faCircleArrowUp, faMeteor, faPersonRunning } from '@fortawesome/free-solid-svg-icons'
+import { faCircleArrowDown, faCircleArrowLeft, faCircleArrowRight, faCircleArrowUp} from '@fortawesome/free-solid-svg-icons'
 import { movePlayer } from "./Tool";
-import { defaultNumberOfPhazes, togglePhaze } from "./Phaze";
-import { defaultNumberOfQuakes, toggleQuake } from "./Quake";
 import { getCookie } from "./Cookies";
 
 class Down extends React.Component {
@@ -14,8 +12,6 @@ class Down extends React.Component {
         this.down = this.down.bind(this);
         this.left = this.left.bind(this);
         this.right = this.right.bind(this);
-        this.phaze = this.phaze.bind(this);
-        this.quake = this.quake.bind(this);
     }
 
     up() {
@@ -32,14 +28,6 @@ class Down extends React.Component {
 
     right() {
         movePlayer("right")
-    }
-
-    phaze() {
-        togglePhaze()
-    }
-
-    quake() {
-        toggleQuake()
     }
 
     componentDidMount() {

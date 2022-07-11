@@ -9,13 +9,13 @@ export function useStarkNet() {
 
 export function Account() {
   const { account } = useStarknet();
-  return <div>Account: {account || "Your are not connected!"}</div>;
+  return <div>Gm: {account || "Your are not connected!"}</div>;
 }
 
 export function ButtonConnect() {
   const { connect, connectors } = useConnectors();
   return (
-    <div className="row gtr-25 gtr-uniform">
+    <div >
       {connectors.map((connector) =>
         connector.available() ? (
           <div >

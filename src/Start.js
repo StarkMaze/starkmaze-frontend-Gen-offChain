@@ -37,9 +37,9 @@ class Start extends React.Component {
                 <button onClick={this.closeStart} id="x">
                     <FontAwesomeIcon icon={faXmark} />
                 </button>
-                <p id="title">Welcome to Phaze!</p>
+                <p id="title">Welcome to StarkMaze!</p>
                 <p>
-                    Phaze is a maze with extra things to do. Finish it before the time runs out!
+                    StarkMaze is a mini recuring maze game build on StarkNet = Finish him as fast as possible and maybe get the prize
                     <br />
                     <br />
                     You start at the bottom left.
