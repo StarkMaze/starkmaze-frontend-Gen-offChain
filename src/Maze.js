@@ -61,7 +61,7 @@ class Maze extends React.Component {
 
                 <div id="finished" className="maze-overlay">
                     <p id="edit-results-finished" className="overlay-p">
-                        You finished the maze!
+                        Congratulaton you finished the maze!
                     </p>
                     <p className="overlay-p">GENERATE NFT COMING SOON !
                      </p>
