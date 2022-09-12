@@ -1,5 +1,3 @@
-<img align="right" src="https://cdn.discordapp.com/attachments/995056019040378950/995705248641466468/logo512.png" height="200" width="200">  
-
 # StarkMaze
 Using <a  href="https://reactjs.org/">React</a>, <a  href="https://www.npmjs.com/package/amazejs">Amaze</a>, and <a  href="https://fontawesome.com/">FontAwesome</a>
 
